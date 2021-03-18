@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
 
-    [SerializeField] private float speed;
-    [SerializeField] private float jumpSpeed;
+    [SerializeField] private float speed = 2f;
+    [SerializeField] private float jumpSpeed = 2f;
     [SerializeField] private LayerMask ground;
 
     private PlayerActionControls playerActionControls;
@@ -23,6 +23,14 @@ public class PlayerController : MonoBehaviour
     private AudioClip deathsound;
 
     private AudioSource audioSource;
+
+    public int maxHealth = 100;
+    public int currentHealth = 0;
+    public static bool gotHit = false;
+
+    public HealthBar healthBar;
+
+    [SerializeField] private Transform fp;
 
     private void Awake()
     {
@@ -48,6 +56,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerActionControls.Land.Jump.performed += _ => Jump();
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
         deathsound = (AudioClip)Resources.Load("deathsound");
     }
 
@@ -93,18 +103,50 @@ public class PlayerController : MonoBehaviour
         else animator.SetBool("Run", false);
 
         //Sprite Flip
+        Vector2 spriteScale = spriteRenderer.transform.localScale;
         if(movementInput == -1)
-            spriteRenderer.flipX = true;
+        {
+            spriteScale.x = -1;
+        	fp.rotation = Quaternion.Euler(0f, 180f, 0f);
+        }
+            
         else if (movementInput ==1)
-            spriteRenderer.flipX = false;
-    }
+        {
+            spriteScale.x = 1;
+            fp.rotation = Quaternion.Euler(0f, 0f, 0f);
+        }
+
+        spriteRenderer.transform.localScale = spriteScale;
+
+    }  
+     
 
     private void OnCollisionEnter2D(Collision2D other)
     {
         if(other.gameObject.tag == "Enemy")
         {
             StartCoroutine(PlaySound());
+            TakeDamage(20);
+            gotHit = true;
+            ScoreScript.combo = 0;
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D trig)
+    {
+        if(trig.gameObject.CompareTag("Enemy"))
+        {
+            StartCoroutine(PlaySound());
+            TakeDamage(20);
+            gotHit = true;
+            ScoreScript.combo = 0;
+        }
+    }
+
+    private void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
     }
 
     IEnumerator PlaySound()
@@ -112,6 +154,9 @@ public class PlayerController : MonoBehaviour
         audioSource.clip = deathsound;
         audioSource.Play();
         yield return new WaitUntil(() => audioSource.isPlaying == false);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if(currentHealth <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 }

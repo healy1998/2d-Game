@@ -33,6 +33,14 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Fire"",
+                    ""type"": ""Button"",
+                    ""id"": ""d07d786f-b993-4d8e-850d-d54d80c25d92"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -103,6 +111,72 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""Joy Stick"",
+                    ""id"": ""3ad44040-3600-4809-b694-8cd01856a42e"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""82c3c56a-3e11-460e-93df-3d44ad822a83"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""8ca06736-fdc9-4bc9-96e5-9cd246d6c275"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""D-Pad"",
+                    ""id"": ""eb153332-b3db-4a88-9c96-a71ae6dd3af7"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""8336a9bf-7eac-4c25-a2b6-68072ac7e1ed"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""93fe285f-8c89-4666-bc17-74890f8ea341"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": """",
                     ""id"": ""d78739ce-ef2c-4a42-ac88-4b567c2d76df"",
                     ""path"": ""<Keyboard>/space"",
@@ -110,6 +184,28 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d901d4a8-a56f-4489-b491-75840edec0be"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fd7df756-c96e-43a6-a3ce-728cd00cc9b5"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Fire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -122,6 +218,7 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
         m_Land = asset.FindActionMap("Land", throwIfNotFound: true);
         m_Land_Move = m_Land.FindAction("Move", throwIfNotFound: true);
         m_Land_Jump = m_Land.FindAction("Jump", throwIfNotFound: true);
+        m_Land_Fire = m_Land.FindAction("Fire", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -173,12 +270,14 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
     private ILandActions m_LandActionsCallbackInterface;
     private readonly InputAction m_Land_Move;
     private readonly InputAction m_Land_Jump;
+    private readonly InputAction m_Land_Fire;
     public struct LandActions
     {
         private @PlayerActionControls m_Wrapper;
         public LandActions(@PlayerActionControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Land_Move;
         public InputAction @Jump => m_Wrapper.m_Land_Jump;
+        public InputAction @Fire => m_Wrapper.m_Land_Fire;
         public InputActionMap Get() { return m_Wrapper.m_Land; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -194,6 +293,9 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                 @Jump.started -= m_Wrapper.m_LandActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_LandActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_LandActionsCallbackInterface.OnJump;
+                @Fire.started -= m_Wrapper.m_LandActionsCallbackInterface.OnFire;
+                @Fire.performed -= m_Wrapper.m_LandActionsCallbackInterface.OnFire;
+                @Fire.canceled -= m_Wrapper.m_LandActionsCallbackInterface.OnFire;
             }
             m_Wrapper.m_LandActionsCallbackInterface = instance;
             if (instance != null)
@@ -204,6 +306,9 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
+                @Fire.started += instance.OnFire;
+                @Fire.performed += instance.OnFire;
+                @Fire.canceled += instance.OnFire;
             }
         }
     }
@@ -212,5 +317,6 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+        void OnFire(InputAction.CallbackContext context);
     }
 }
