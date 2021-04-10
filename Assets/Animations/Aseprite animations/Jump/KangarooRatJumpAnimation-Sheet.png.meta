@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3a5065c8abe898b4e97cee03413029f5
+guid: 7059c8780b9175f46851e384a83dff02
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -20,6 +20,39 @@ TextureImporter:
   - first:
       213: -4128724690991093444
     second: KangarooRatJumpAnimation-Sheet_5
+  - first:
+      213: -3083407892174145028
+    second: KangarooRatJumpAnimation-Sheet_6
+  - first:
+      213: -2448964781408819286
+    second: KangarooRatJumpAnimation-Sheet_7
+  - first:
+      213: -1192446729748996474
+    second: KangarooRatJumpAnimation-Sheet_8
+  - first:
+      213: -2089813001502985164
+    second: KangarooRatJumpAnimation-Sheet_9
+  - first:
+      213: -4830420795512616314
+    second: KangarooRatJumpAnimation-Sheet_10
+  - first:
+      213: -4686215638733242913
+    second: KangarooRatJumpAnimation-Sheet_11
+  - first:
+      213: -7850153626610270056
+    second: KangarooRatJumpAnimation-Sheet_12
+  - first:
+      213: 8907843810869386041
+    second: KangarooRatJumpAnimation-Sheet_13
+  - first:
+      213: -3218862375350092495
+    second: KangarooRatJumpAnimation-Sheet_14
+  - first:
+      213: 4470622974463824272
+    second: KangarooRatJumpAnimation-Sheet_15
+  - first:
+      213: 1322589498055126864
+    second: KangarooRatJumpAnimation-Sheet_16
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -232,10 +265,241 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: KangarooRatJumpAnimation-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf9f251dbd88535d0800000000000000
+      internalID: -3083407892174145028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KangarooRatJumpAnimation-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa76fa8a187830ed0800000000000000
+      internalID: -2448964781408819286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KangarooRatJumpAnimation-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68e1cb36404937fe0800000000000000
+      internalID: -1192446729748996474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KangarooRatJumpAnimation-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 434fb6eb52e7ff2e0800000000000000
+      internalID: -2089813001502985164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KangarooRatJumpAnimation-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68a8fcf01e5e6fcb0800000000000000
+      internalID: -4830420795512616314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KangarooRatJumpAnimation-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fddbc6884b737feb0800000000000000
+      internalID: -4686215638733242913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KangarooRatJumpAnimation-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89086a55ed6ae0390800000000000000
+      internalID: -7850153626610270056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KangarooRatJumpAnimation-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 3328
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93b188d00c40f9b70800000000000000
+      internalID: 8907843810869386041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KangarooRatJumpAnimation-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13d336059bd4453d0800000000000000
+      internalID: -3218862375350092495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KangarooRatJumpAnimation-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 091dd9da8e7da0e30800000000000000
+      internalID: 4470622974463824272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KangarooRatJumpAnimation-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05fec3f1428ca5210800000000000000
+      internalID: 1322589498055126864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 94f32566c79185e429ece400f76fe2ef
+    spriteID: 03422112b97328544870b20b7d4f99c8
     internalID: 0
     vertices: []
     indices: 

@@ -1,7 +1,8 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -30,7 +31,14 @@ public class PlayerController : MonoBehaviour
 
     public HealthBar healthBar;
 
+    public Image[] lives;
+    public int livesRemaining;
+
     [SerializeField] private Transform fp;
+
+    public GameOverScreen gameOverScreen;
+
+    public Text playerName;
 
     private void Awake()
     {
@@ -40,6 +48,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
+        playerName = GetComponent<Text>();
     }
 
     private void OnEnable()
@@ -149,14 +158,27 @@ public class PlayerController : MonoBehaviour
         healthBar.SetHealth(currentHealth);
     }
 
+    private void LoseLife()
+    {
+        livesRemaining--;
+        currentHealth = maxHealth;
+        lives[livesRemaining].enabled = false;
+    }
+
     IEnumerator PlaySound()
     {
         audioSource.clip = deathsound;
         audioSource.Play();
         yield return new WaitUntil(() => audioSource.isPlaying == false);
-        if(currentHealth <= 0)
+        if(currentHealth <= 0 && livesRemaining > 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            LoseLife();
+        }
+        if(currentHealth <= 0 && livesRemaining <= 0)
+        {
+            SceneManager.LoadScene("Menu");
+            gameOverScreen.Setup(ScoreScript.ScoreValue);
+            //Destroy(gameObject);
         }
     }
 }

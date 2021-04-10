@@ -29,7 +29,6 @@ public class CameraFollow : MonoBehaviour
         {
             newPosition.y = follow.y;
         }
-        //                             pop pop
         float moveSpeed = rb.velocity.magnitude > speed ? rb.velocity.magnitude : speed;
         transform.position = Vector3.MoveTowards(transform.position, newPosition, moveSpeed * Time.deltaTime);
 

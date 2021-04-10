@@ -6,14 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/2DPlatformer/Scenes/Levels/Jungle_1_0.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/Menu.unity
+    guid: a9de71d451b2eeb4a9c225d6e35a8a07
   - enabled: 1
-    path: Assets/2DPlatformer/Scenes/Levels/SpaceWars_1_0.unity
-    guid: deb06521fc5621b40b87d19f9952fd66
-  - enabled: 1
-    path: Assets/2DPlatformer/Scenes/MainWorldScene.unity
-    guid: 437f01eac8c4c86469e374441e4a4080
-  - enabled: 1
-    path: Assets/2DPlatformer/Scenes/MainMenuScene.unity
-    guid: 57185a2dae9f2f04baf5629d7fd3a173
+    path: Assets/Scenes/Level 1.unity
+    guid: 1d00e3b4466d0404181ab18151e26292
+  m_configObjects: {}

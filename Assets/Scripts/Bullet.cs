@@ -17,11 +17,6 @@ public class Bullet : MonoBehaviour
         Invoke("DestroyBullet", lifeTime);
     }
 
-    void Update()
-    {
-        
-    }
-
     void OnTriggerEnter2D(Collider2D hitInfo) 
     {
         Enemy enemy = hitInfo.GetComponent<Enemy>();
