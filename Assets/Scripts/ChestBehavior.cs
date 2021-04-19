@@ -20,7 +20,9 @@ public class ChestBehavior : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("Level 1");
+        Weapon.currentAmmo = 30;
+        ScoreScript.ScoreValue = ScoreScript.ScoreValue + 100;
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

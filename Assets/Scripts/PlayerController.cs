@@ -101,6 +101,20 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        if(other.gameObject.tag == "Wolf")
+        {
+            StartCoroutine(PlaySound());
+            TakeDamage(20);
+            gotHit = true;
+            ScoreScript.combo = 0;
+        }
+        if(other.gameObject.tag == "Owl")
+        {
+            StartCoroutine(PlaySound());
+            TakeDamage(40);
+            gotHit = true;
+            ScoreScript.combo = 0;
+        }
         if(other.gameObject.tag == "Enemy")
         {
             StartCoroutine(PlaySound());

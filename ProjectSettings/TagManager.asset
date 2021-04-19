@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+<<<<<<< Updated upstream
+=======
+  - Spikes
+  - Wolf
+  - Owl
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
