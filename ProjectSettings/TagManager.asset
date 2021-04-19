@@ -5,12 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
-<<<<<<< Updated upstream
-=======
   - Spikes
   - Wolf
   - Owl
->>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
@@ -20,18 +17,18 @@ TagManager:
   - UI
   - 
   - 
+  - PostProcessing
   - Ground
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - DynamicProps
+  - StaicProps
+  - DamagedProps
+  - Ally
+  - Enemy
+  - Dead
+  - Loot
+  - DeadlyCollider
+  - OnlyGroundTrigger
+  - Platform
   - 
   - 
   - 
@@ -48,9 +45,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Platform
-    uniqueID: 878165763
+  - name: Environment
+    uniqueID: 3986525289
     locked: 0
-  - name: Player
-    uniqueID: 2545472801
+  - name: Character
+    uniqueID: 2488654975
     locked: 0

@@ -39034,7 +39034,7 @@ MonoBehaviour:
   - {fileID: 427165864}
   - {fileID: 1968854489}
   - {fileID: 0}
-  livesRemaining: 3
+  livesRemaining: 2
   fp: {fileID: 992592276}
   gameOverScreen: {fileID: 0}
   playerName: {fileID: 0}
